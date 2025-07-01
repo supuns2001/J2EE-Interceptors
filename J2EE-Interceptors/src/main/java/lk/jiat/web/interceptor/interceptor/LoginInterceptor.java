@@ -6,25 +6,18 @@ import jakarta.interceptor.Interceptor;
 import jakarta.interceptor.InvocationContext;
 import lk.jiat.web.interceptor.anotation.Login;
 
-import java.util.Map;
-
 @Interceptor
 @Login
-@Priority(2)
-public class AInterceptor {
+@Priority(1)
+public class LoginInterceptor {
 
     @AroundInvoke
     public Object interceptor(InvocationContext ic)throws  Exception{
-        System.out.println("A Intercept - Intercepts start");
 
-//        Map<String, Object> contextData = ic.getContextData();
-//        System.out.println(contextData);
-
+        System.out.println("Login Intercept - Intercepts start");
 
         Object proceed = ic.proceed();
-        System.out.println("A Interceptor :"+proceed);
-
-        System.out.println("A Intercept - Intercepts end");
+        System.out.println("Login Intercept - Intercepts end");
 
         return proceed;
 

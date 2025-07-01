@@ -2,11 +2,13 @@ package lk.jiat.web.interceptor.ejb;
 
 import jakarta.ejb.Stateless;
 import jakarta.interceptor.Interceptors;
+import lk.jiat.web.interceptor.anotation.Login;
 import lk.jiat.web.interceptor.interceptor.AInterceptor;
 import lk.jiat.web.interceptor.interceptor.TestInterceptor;
 
 @Stateless
-@Interceptors({TestInterceptor.class, AInterceptor.class})
+//@Interceptors({TestInterceptor.class, AInterceptor.class})
+@Login
 public class UserSessionBean {
 
 
